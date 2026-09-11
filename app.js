@@ -181,6 +181,7 @@ app.post("/admin/ticket/:id/delete",isAdmin, async (req, res) => {
 
     res.redirect("/admin");
 });
+console.log("MONGODB_URI exists:", !!process.env.MONGODB_URI);
 mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log("MongoDB connected");
