@@ -181,7 +181,7 @@ app.post("/admin/ticket/:id/delete",isAdmin, async (req, res) => {
 
     res.redirect("/admin");
 });
-mongoose.connect("mongodb://127.0.0.1:27017/helpdesk")
+mongoose.connect(process.env.MONGODB_URI)
     .then(() => {
         console.log("MongoDB connected");
     })
